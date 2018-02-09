@@ -3,12 +3,14 @@
 
 ## Prerequisities
 
-[BBmap]()
+[BBmap](https://sourceforge.net/projects/bbmap/)
 
-[Trimmomatic]()
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
 
-[GMAP/GSNAP]()
+[GMAP/GSNAP](http://research-pub.gene.com/gmap/)
 
-[seqtk]()
+[seqtk](https://github.com/lh3/seqtk)
 
-[samtools]()
+[samtools](http://www.htslib.org/doc/samtools.html)
+
+[UniVec](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/)
