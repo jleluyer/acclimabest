@@ -18,8 +18,8 @@ LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
 #Global variables
-READSLEFT="04_merged/all_left.fq"
-READSRIGHT="04_merged/all_right.fq"
+READSLEFT="03_trimmed/assembly/all_reads.left.fastq.gz"
+READSRIGHT="03_trimmed/assembly/all_reads.right.fastq.gz"
 #READSSINGLE="03_trimmed/*.trimmed.fastq.gz"
 
 #Trinity variables
