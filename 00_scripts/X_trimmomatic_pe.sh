@@ -28,12 +28,12 @@ base=__BASE__
 trimmomatic PE -Xmx60G \
         -threads 8 \
         -phred33 \
-        02_data/assembly/"$base"_R1.fastq.gz \
-        02_data/assembly/"$base"_R2.fastq.gz \
-        03_trimmed/assembly/"$base"_R1.paired.fastq.gz \
-        03_trimmed/assembly/"$base"_R1.single.fastq.gz \
-        03_trimmed/assembly/"$base"_R2.paired.fastq.gz \
-        03_trimmed/assembly/"$base"_R2.single.fastq.gz \
+        02_data/diff_expression/"$base"_R1.fastq.gz \
+        02_data/diff_expression/"$base"_R2.fastq.gz \
+        03_trimmed/diff_expression/"$base"_R1.paired.fastq.gz \
+        03_trimmed/diff_expression/"$base"_R1.single.fastq.gz \
+        03_trimmed/diff_expression/"$base"_R2.paired.fastq.gz \
+        03_trimmed/diff_expression/"$base"_R2.single.fastq.gz \
         ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
         LEADING:20 \
         TRAILING:20 \

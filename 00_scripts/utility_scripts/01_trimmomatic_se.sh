@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N trimmomatic__BASE__
-#PBS -o trimmomatic__BASE__.out
+#PBS -o 98_log_files/trimmomatic.__BASE__.out
 #PBS -l walltime=02:00:00
 #PBS -l mem=60g
 #####PBS -m ea 
@@ -25,17 +25,12 @@ ADAPTERFILE="/home1/datawork/jleluyer/00_ressources/univec/univec.fasta"
 NCPU=8
 base=__BASE__
 
-trimmomatic PE -Xmx60G \
-        -threads 8 \
+trimmomatic SE -Xmx60G \
         -phred33 \
-        02_data/assembly/"$base"_R1.fastq.gz \
-        02_data/assembly/"$base"_R2.fastq.gz \
-        03_trimmed/assembly/"$base"_R1.paired.fastq.gz \
-        03_trimmed/assembly/"$base"_R1.single.fastq.gz \
-        03_trimmed/assembly/"$base"_R2.paired.fastq.gz \
-        03_trimmed/assembly/"$base"_R2.single.fastq.gz \
+        02_data/"$base".fastq.gz \
+        03_trimmed/"$base".trimmed.fastq.gz \
         ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
         LEADING:20 \
         TRAILING:20 \
         SLIDINGWINDOW:30:30 \
-        MINLEN:60 2> 98_log_files/log.trimmomatic.pe."$TIMESTAMP"   
+        MINLEN:60 2>&1 | tee 98_log_files/"$TIMESTAMP"_trimmomatic_"$base".log
