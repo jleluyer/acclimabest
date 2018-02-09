@@ -27,8 +27,8 @@ base=__BASE__
 
 trimmomatic SE -Xmx60G \
         -phred33 \
-        02_data/"$base".fastq.gz \
-        03_trimmed/"$base".trimmed.fastq.gz \
+        02_data/assembly/"$base".fastq.gz \
+        03_trimmed/assembly/"$base".trimmed.fastq.gz \
         ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
         LEADING:20 \
         TRAILING:20 \
