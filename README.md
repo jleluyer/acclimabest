@@ -8,7 +8,7 @@ The software is provided "as is", without warranty of any kind, express or impli
 
 ### Trancriptome assembly
 
-#### Raw data trimming
+#### 1. Raw data trimming
 
 ```
 ~> 00_scripts/datarmor/01_trimmomatic_jobs_pe.sh

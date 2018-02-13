@@ -24,7 +24,7 @@ platform="Illumina"
 #move to present working dir
 cd $PBS_O_WORKDIR
 
-base=BT1
+base=__BASE__
 
     # Align reads
     echo "Aligning $base"
