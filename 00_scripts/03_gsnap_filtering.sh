@@ -31,12 +31,13 @@ base=__BASE__
 
     gsnap --gunzip -t 12 -A sam \
 	--dir="$GENOMEFOLDER" -d "$GENOME" \
-        -o "$DATAOUTPUT"/"$base".sam \
+        -o "$DATAOUTPUT"/"$base" \
 	--max-mismatches=5 --novelsplicing=1 \
 	--read-group-id="$base" \
 	 --read-group-platform="$platform" \
 	"$DATAINPUT"/"$base".trimmed.fastq.gz
-    
+#--split-output="$DATAOUTPUT"/"$base" \    
+
 # Create bam file
     echo "Creating bam for $base"
     samtools view -Sb -F 4 \
@@ -46,7 +47,3 @@ base=__BASE__
         "$DATAOUTPUT"/"$base".sam >"$DATAOUTPUT"/"$base".unmapped.bam	
     
 # Clean up
-    echo "Removing "$TMP"/"$base".sam"
-    echo "Removing "$TMP"/"$base".bam"
-
-   	rm "$DATAOUTPUT"/"$base".sam

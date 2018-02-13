@@ -5,7 +5,7 @@
 
 rm 00_scripts/datarmor_jobs/CLN_*sh
 
-for i in $(ls 04_mapped/assembly/*.bam|sed -e 's/.unmapped.bam//g' -e 's/mapped.bam//g')
+for i in $(ls 04_mapped/assembly/*.bam|sed -e 's/.unmapped.bam//g' -e 's/.mapped.bam//g')
 
 do
 base="$(basename $i)"

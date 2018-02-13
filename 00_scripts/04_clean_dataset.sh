@@ -21,20 +21,20 @@ cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
 # Global variables
 base=__BASE__
-DATAINPUT="03_trimmed"
-DATAMAP="04_mapped/transcriptome"
+DATAINPUT="03_trimmed/assembly"
+DATAMAP="04_mapped/assembly"
 
 
 # create list reads symbiont
 
 samtools view "$DATAMAP"/"$base".mapped.bam|awk '{print $1}'|sort -u >list_symbiont_"$base"
 
-# Filter input reads
-filterbyname.sh in="$DATAINPUT"/"$base".trimmed.fastq.gz out="$DATAINPUT"/"$base".symbiont.fastq.gz ow=t names=list_symbiont_"$base" include=f
+# Filter input reads symbiont
+filterbyname.sh in="$DATAINPUT"/"$base".trimmed.fastq.gz out="$DATAINPUT"/"$base".host.fastq.gz ow=t names=list_symbiont_"$base" include=f
 
 
 # create list reads host
 samtools view "$DATAMAP"/"$base".unmapped.bam|awk '{print $1}'|sort -u >list_host_"$base"
 
 # Filter input reads host
-filterbyname.sh in="$DATAINPUT"/"$base".trimmed.fastq.gz out="$DATAINPUT"/"$base".host.fastq.gz ow=t names=list_host_"$base" include=f
+filterbyname.sh in="$DATAINPUT"/"$base".trimmed.fastq.gz out="$DATAINPUT"/"$base".symbiont.fastq.gz ow=t names=list_host_"$base" include=f
