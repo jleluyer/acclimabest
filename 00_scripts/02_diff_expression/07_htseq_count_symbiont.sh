@@ -15,7 +15,7 @@ cd $PBS_O_WORKDIR
 . /appli/bioinfo/htseq/0.6.1/env.sh
 
 #Global variables
-DATAINPUT="04_mapped/transcriptome"
+DATAINPUT="04_mapped/diff_expression"
 DATAOUTPUT="05_count"
 DATAOUTPUT_SPLICE=""
 
