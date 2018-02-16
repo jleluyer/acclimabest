@@ -16,8 +16,8 @@ DATAOUTPUT="04_mapped/assembly"
 DATAINPUT="03_trimmed/assembly"
 
 # For transcriptome
-GENOMEFOLDER="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/clade_C1/gmap_symbiodiniumspC1"
-GENOME="gmap_symbiodiniumspC1"
+GENOMEFOLDER="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool"
+GENOME="gmap_pool"
 
 platform="Illumina"
 

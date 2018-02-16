@@ -38,12 +38,16 @@ qsub 00_scripts/02_gmap_index.sh
 
 [BBmap](https://sourceforge.net/projects/bbmap/)
 
-[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
-
 [GMAP/GSNAP](http://research-pub.gene.com/gmap/)
+
+[samtools](http://www.htslib.org/doc/samtools.html)
 
 [seqtk](https://github.com/lh3/seqtk)
 
-[samtools](http://www.htslib.org/doc/samtools.html)
+[sra-tools](https://github.com/ncbi/sra-tools)
+
+[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)
+
+[Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki)
 
 [UniVec](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/)
