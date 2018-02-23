@@ -23,7 +23,7 @@ cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 #Global variables
 #READSLEFT="03_trimmed/assembly/all_reads.left.fastq.gz"
 #READSRIGHT="03_trimmed/assembly/all_reads.right.fastq.gz"
-READSSINGLE="03_trimmed/assembly/host.fastq.gz"
+READSSINGLE="03_trimmed/assembly/SRR6064905_1.trimmed.fastq.gz"
 
 #Trinity variables
 ##Required
