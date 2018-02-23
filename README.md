@@ -11,7 +11,7 @@ The software is provided "as is", without warranty of any kind, express or impli
 #### 1.1 Raw data trimming
 
 ```
-00_scripts/datarmor/01_transcriptome_assembly/01_trimmomatic_jobs_pe.sh
+00_scripts/datarmor_jobs/01_transcriptome_assembly/01_trimmomatic_jobs_pe.sh
 ```
 *Make sure that you are in the root of the git repository*
 
@@ -55,7 +55,7 @@ qsub 00_scripts/datarmor_jobs/07_assembly_stats
 #### 2.1 Raw data trimming
 
 ```
-00_scripts/datarmor/02_diff_expression/01_trimmomatic_jobs_pe.sh
+00_scripts/datarmor_jobs/02_diff_expression/01_trimmomatic_jobs_pe.sh
 ```
 *Make sure that you are in the root of the git repository*
 
