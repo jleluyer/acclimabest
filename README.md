@@ -44,6 +44,50 @@ qsub 00_scripts/datarmor_jobs/06_assemble_trinity.sh
 qsub 00_scripts/datarmor_jobs/07_assembly_stats
 ```
 
+#### 6. Assembly filtering
+
+```
+```
+
+### 2. Differential expression analysis
+
+#### 2.1 Raw data trimming
+
+```
+00_scripts/datarmor/02_differential_expression/01_trimmomatic_jobs_pe.sh
+```
+*Make sure that you are in the root of the git repository*
+
+#### 2.2 Prepare reference
+
+```
+qsub 00_scripts/02_differential_expression/02_gmap_index.sh
+```
+
+#### 2.3 Filtering datasets assembly
+
+This step is meant to tease apart host from symbionts transcripts (*i.e* Corals, Giant clams,..)
+
+```
+00_scripts/datarmor_jobs/02_differential_expression/03_gmap_mapping_jobs.sh
+
+00_scripts/datarmor_jobs/02_differential_expression/04_clean_dataset_jobs.sh
+```
+
+#### 2.4 Mapping
+
+```
+00_scripts/datarmor_jobs/02_differential_expression/05_gsnap_mapping_jobs.sh
+```
+
+#### 2.5 Counting gene expression
+
+```
+00_scripts/datarmor_jobs/02_differential_expression/06_htseq_count.sh
+```
+
+#### 2.6 Differential expression testing
+
 ## Prerequisities
 
 [BBmap](https://sourceforge.net/projects/bbmap/)
