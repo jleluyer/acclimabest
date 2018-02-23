@@ -11,22 +11,22 @@ The software is provided "as is", without warranty of any kind, express or impli
 #### 1. Raw data trimming
 
 ```
-~> 00_scripts/datarmor/01_trimmomatic_jobs_pe.sh
+00_scripts/datarmor/01_transcriptome_assembly/01_trimmomatic_jobs_pe.sh
 ```
 *Make sure that you are in the root of the git repository*
 
 #### 2. Prepare reference
  
 ```
-qsub 00_scripts/02_gmap_index.sh 
+qsub 00_scripts/01_transcriptome_assembly/02_gmap_index.sh 
 ```
 
 #### 3 Filtering datasets assembly
 
 ```
-00_scripts/datarmor_jobs/03_gmap_mapping_jobs.sh
+00_scripts/datarmor_jobs/01_transcriptome_assembly/03_gmap_mapping_jobs.sh
 
-00_scripts/datarmor_jobs/04_clean_dataset_jobs.sh
+00_scripts/datarmor_jobs/01_transcriptome_assembly/04_clean_dataset_jobs.sh
 ```
 
 #### 4. Assemble the transcriptome
