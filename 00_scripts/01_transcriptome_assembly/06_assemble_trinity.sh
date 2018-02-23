@@ -2,9 +2,9 @@
 #PBS -N assembly
 #PBS -o 98_log_files/log-assembly.out
 #PBS -l walltime=20:00:00
-#PBS -l mem=200g
+#PBS -l mem=150g
 #####PBS -m ea 
-#PBS -l ncpus=8
+#PBS -l ncpus=25
 #PBS -q omp
 #PBS -r n
 
@@ -29,7 +29,7 @@ READSSINGLE="03_trimmed/assembly/SRR6064905_1.trimmed.fastq.gz"
 ##Required
 seqtype="--seqType fq"	     		# type of reads: ( fa, or fq )
 
-mem="--max_memory 200G"   		# suggested max memory to use by Trinity where limiting can be enabled. (jellyfish, sorting, etc)
+mem="--max_memory 150G"   		# suggested max memory to use by Trinity where limiting can be enabled. (jellyfish, sorting, etc)
                             		# provied in Gb of RAM, ie.  '--max_memory 10G'
 #paired reads:
 #left="--left  $READSLEFT"    		#left reads, one or more file names (separated by commas, no spaces)
@@ -42,7 +42,7 @@ single="--single $READSSINGLE"   		#single reads, one or more file names, comma-
                                   		# if paired: RF or FR,
                                    		#if single: F or R.   (dUTP method = RF)
                                    		#See web documentation.
-cpu="--CPU 8" 	                    		#number of CPUs to use, default: 2
+cpu="--CPU 25" 	                    		#number of CPUs to use, default: 2
 mincontiglength="--min_contig_length 200" 	#minimum assembled contig length to report
                                    		#(def=200)
 #corlongread="--long_reads <string>"	        #fasta file containing error-corrected or circular consensus (CCS) pac bio reads
