@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N import
-#PBS -o 98_log_files/import.dataset.out
+#PBS -o 98_log_files/import.__BASE__.out
 #PBS -l walltime=20:00:00
 #PBS -l mem=10g
 #PBS -l ncpus=1
@@ -9,10 +9,7 @@
 cd $PBS_O_WORKDIR
 
 
-for i in $(cat 01_info_files/files_accession.txt|awk '{print $1}'|grep -iv "model")
+base=__BASE__
 
-do 
+fastq-dump --gzip --split-files --outdir "02_data/assembly/" $base
 
-fastq-dump --gzip --split-files --outdir "02_data/assembly/" $i
-
-done

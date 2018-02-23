@@ -33,4 +33,4 @@ trimmomatic SE -Xmx60G \
         LEADING:20 \
         TRAILING:20 \
         SLIDINGWINDOW:30:30 \
-        MINLEN:60 2>&1 | tee 98_log_files/"$TIMESTAMP"_trimmomatic_"$base".log
+        MINLEN:40 2>&1 | tee 98_log_files/"$TIMESTAMP"_trimmomatic_"$base".log

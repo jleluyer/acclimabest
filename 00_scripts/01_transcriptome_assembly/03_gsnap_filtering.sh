@@ -31,7 +31,7 @@ base=__BASE__
 
     gsnap --gunzip -t 12 -A sam \
 	--dir="$GENOMEFOLDER" -d "$GENOME" \
-        -o "$DATAOUTPUT"/"$base" \
+        -o "$DATAOUTPUT"/"$base".sam \
 	--max-mismatches=5 --novelsplicing=1 \
 	--read-group-id="$base" \
 	 --read-group-platform="$platform" \
