@@ -6,22 +6,22 @@ The software is provided "as is", without warranty of any kind, express or impli
 
 ## Documentation
 
-### Trancriptome assembly
+### 1. Trancriptome assembly
 
-#### 1. Raw data trimming
+#### 1.1 Raw data trimming
 
 ```
 00_scripts/datarmor/01_transcriptome_assembly/01_trimmomatic_jobs_pe.sh
 ```
 *Make sure that you are in the root of the git repository*
 
-#### 2. Prepare reference
+#### 1.2 Prepare reference
  
 ```
 qsub 00_scripts/01_transcriptome_assembly/02_gmap_index.sh 
 ```
 
-#### 3 Filtering datasets assembly
+#### 1.3 Filtering datasets assembly
 
 This step is meant to tease apart host from symbionts transcripts (*i.e* Corals, Giant clams,..)
 
@@ -31,20 +31,21 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 00_scripts/datarmor_jobs/01_transcriptome_assembly/04_clean_dataset_jobs.sh
 ```
 
-#### 4. Assemble the transcriptome
+#### 1.4 Assemble the transcriptome
 
 ```
 qsub 00_scripts/datarmor_jobs/05_merge_input.sh
 
 qsub 00_scripts/datarmor_jobs/06_assemble_trinity.sh
 ```
-#### 5. Assembly statistics
+
+#### 1.5 Assembly statistics
 
 ```
 qsub 00_scripts/datarmor_jobs/07_assembly_stats
 ```
 
-#### 6. Assembly filtering
+#### 1.6 Assembly filtering
 
 ```
 ```
@@ -88,6 +89,9 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 
 #### 2.6 Differential expression testing
 
+```
+```
+
 ## Prerequisities
 
 [BBmap](https://sourceforge.net/projects/bbmap/)
@@ -109,6 +113,8 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 ## Flow chart
 
 Typical Acclimabest workflow. 
+
+*in progress*
 
 ![](01_info_files.png)
 
