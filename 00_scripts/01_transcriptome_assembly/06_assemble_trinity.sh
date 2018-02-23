@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N assembly
-#PBS -o 98_log_files/assembly.out
+#PBS -o 98_log_files/log-assembly.out
 #PBS -l walltime=20:00:00
 #PBS -l mem=200g
 #####PBS -m ea 

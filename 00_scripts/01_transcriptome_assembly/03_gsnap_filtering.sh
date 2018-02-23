@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N gsnap.__BASE__
-#PBS -o gsnap.__BASE__.err
+#PBS -o 98_log_files/gsnap.__BASE__.err
 #PBS -l walltime=23:00:00
 #PBS -l mem=30g
 #####PBS -m ea

@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N trimmomatic__BASE__
-#PBS -o trimmomatic__BASE__.out
+#PBS -o 98_log_files/trimmomatic__BASE__.out
 #PBS -l walltime=02:00:00
 #PBS -l mem=60g
 #####PBS -m ea 

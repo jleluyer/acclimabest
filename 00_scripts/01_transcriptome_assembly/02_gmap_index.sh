@@ -1,6 +1,6 @@
 #!/bin/bash
 #PBS -N gmap_index
-#PBS -o gmap_index.out
+#PBS -o 98_log_files/gmap_index.out
 #PBS -l walltime=24:00:00
 #PBS -m ea 
 #PBS -l ncpus=1
