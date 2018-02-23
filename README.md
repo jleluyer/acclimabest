@@ -105,3 +105,13 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 [Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki)
 
 [UniVec](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/)
+
+
+## Contributors
+
+**Alves Monteiro Kisalu Homère** e-mail: homere.alves-monteiro-kisalu@edu.mnhn.fr
+
+**Brahmi Chloé** e-mail: brahmi.chloe@upf.pf
+
+**Le Luyer Jérémy** e-mail: jeremy.le.luyer@ifremer.fr
+
