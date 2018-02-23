@@ -54,14 +54,14 @@ qsub 00_scripts/datarmor_jobs/07_assembly_stats
 #### 2.1 Raw data trimming
 
 ```
-00_scripts/datarmor/02_differential_expression/01_trimmomatic_jobs_pe.sh
+00_scripts/datarmor/02_diff_expression/01_trimmomatic_jobs_pe.sh
 ```
 *Make sure that you are in the root of the git repository*
 
 #### 2.2 Prepare reference
 
 ```
-qsub 00_scripts/02_differential_expression/02_gmap_index.sh
+qsub 00_scripts/02_diff_expression/02_gmap_index.sh
 ```
 
 #### 2.3 Filtering datasets assembly
@@ -69,21 +69,21 @@ qsub 00_scripts/02_differential_expression/02_gmap_index.sh
 This step is meant to tease apart host from symbionts transcripts (*i.e* Corals, Giant clams,..)
 
 ```
-00_scripts/datarmor_jobs/02_differential_expression/03_gmap_mapping_jobs.sh
+00_scripts/datarmor_jobs/02_diff_expression/03_gmap_mapping_jobs.sh
 
-00_scripts/datarmor_jobs/02_differential_expression/04_clean_dataset_jobs.sh
+00_scripts/datarmor_jobs/02_diff_expression/04_clean_dataset_jobs.sh
 ```
 
 #### 2.4 Mapping
 
 ```
-00_scripts/datarmor_jobs/02_differential_expression/05_gsnap_mapping_jobs.sh
+00_scripts/datarmor_jobs/02_diff_expression/05_gsnap_mapping_jobs.sh
 ```
 
 #### 2.5 Counting gene expression
 
 ```
-00_scripts/datarmor_jobs/02_differential_expression/06_htseq_count.sh
+00_scripts/datarmor_jobs/02_diff_expression/06_htseq_count.sh
 ```
 
 #### 2.6 Differential expression testing
