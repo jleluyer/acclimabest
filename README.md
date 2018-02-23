@@ -106,6 +106,11 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 
 [UniVec](https://www.ncbi.nlm.nih.gov/tools/vecscreen/univec/)
 
+## Flow chart
+
+Typical Acclimabest workflow. 
+
+![](01_info_files.png)
 
 ## Contributors
 
