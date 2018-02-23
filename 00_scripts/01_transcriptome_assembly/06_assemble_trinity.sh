@@ -17,10 +17,13 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
+
+. /appli/bioinfo/trinity/latest/env.sh
+
 #Global variables
-READSLEFT="03_trimmed/assembly/all_reads.left.fastq.gz"
-READSRIGHT="03_trimmed/assembly/all_reads.right.fastq.gz"
-#READSSINGLE="03_trimmed/*.trimmed.fastq.gz"
+#READSLEFT="03_trimmed/assembly/all_reads.left.fastq.gz"
+#READSRIGHT="03_trimmed/assembly/all_reads.right.fastq.gz"
+READSSINGLE="03_trimmed/assembly/host.fastq.gz"
 
 #Trinity variables
 ##Required
@@ -29,10 +32,10 @@ seqtype="--seqType fq"	     		# type of reads: ( fa, or fq )
 mem="--max_memory 200G"   		# suggested max memory to use by Trinity where limiting can be enabled. (jellyfish, sorting, etc)
                             		# provied in Gb of RAM, ie.  '--max_memory 10G'
 #paired reads:
-left="--left  $READSLEFT"    		#left reads, one or more file names (separated by commas, no spaces)
-right="--right $READSRIGHT"    		#right reads, one or more file names (separated by commas, no spaces)
+#left="--left  $READSLEFT"    		#left reads, one or more file names (separated by commas, no spaces)
+#right="--right $READSRIGHT"    		#right reads, one or more file names (separated by commas, no spaces)
 #single-end:
-#single="--single $READSSINGLE"   		#single reads, one or more file names, comma-delimited 
+single="--single $READSSINGLE"   		#single reads, one or more file names, comma-delimited 
 						#(note, if single file contains pairs, can use flag: --run_as_paired )
 ##Optionnal
 #strand="--SS_lib_type <string> "        	#Strand-specific RNA-Seq read orientation.
@@ -62,10 +65,10 @@ output="--output 05_trinity_assembly_200/"              	#name of directory for 
                                    		#created if it doesn't already exist)
                                    		#default( your current working directory: "/home/leluyer/trinity_out_dir" 
                                     		#note: must include 'trinity' in the name as a safety precaution! )
-#cleanup="--full_cleanup"                  	#only retain the Trinity fasta file, rename as ${output_dir}.Trinity.fasta
+cleanup="--full_cleanup"                  	#only retain the Trinity fasta file, rename as ${output_dir}.Trinity.fasta
 
 
-00_scripts/trinity_utils/Trinity $seqtype $mem $left $right $single \
+Trinity $seqtype $mem $left $right $single \
 	$strand $cpu $mincontiglength $corlongread \
 	$genomeguided $jaccard $normalize $notphase2 \
 	$output $cleanup 2>&1 | tee 98_log_files/"$TIMESTAMP"_trinityassembly.log

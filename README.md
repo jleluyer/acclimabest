@@ -32,6 +32,14 @@ qsub 00_scripts/01_transcriptome_assembly/02_gmap_index.sh
 #### 4. Assemble the transcriptome
 
 ```
+qsub 00_scripts/datarmor_jobs/05_merge_input.sh
+
+qsub 00_scripts/datarmor_jobs/06_assemble_trinity.sh
+```
+#### 5. Assembly statistics
+
+```
+qsub 00_scripts/datarmor_jobs/07_assembly_stats
 ```
 
 ## Prerequisities
