@@ -23,6 +23,8 @@ qsub 00_scripts/01_transcriptome_assembly/02_gmap_index.sh
 
 #### 3 Filtering datasets assembly
 
+This step is meant to tease apart host from symbionts transcripts (*i.e* Corals, Giant clams,..)
+
 ```
 00_scripts/datarmor_jobs/01_transcriptome_assembly/03_gmap_mapping_jobs.sh
 
