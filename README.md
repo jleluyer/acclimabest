@@ -92,6 +92,14 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 ```
 ```
 
+### 3. WGCNA
+
+*in progress*
+
+### 4. SNPs
+
+*in progress*
+
 ## Prerequisities
 
 [BBmap](https://sourceforge.net/projects/bbmap/)
