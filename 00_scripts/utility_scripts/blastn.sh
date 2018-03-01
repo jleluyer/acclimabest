@@ -7,12 +7,13 @@
 #PBS -q omp
 #PBS -r n
 
-. /appli/bioinfo/blast/2.6.0/env.sh
+# import blast
+
 
 
 cd $PBS_O_WORKDIR
 
 # check conta
-SYMBIOSP="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/clade_C1/Symbiodinium-sp-C1.nt.fa"
+SYMBIOSP="Symbiodinium-sp-C1.nt.fa"
 
 cat $TRANSCRIPTOME| parallel -j 16 -k --block 10k --recstart '>' --pipe blastn -db $SYMBIOSP -query - -outfmt 6 -max_target_seqs 4 -evalue 1e-4 >blastn_transcriptome_symbiodinium_e-4.maxtarget4.txt
