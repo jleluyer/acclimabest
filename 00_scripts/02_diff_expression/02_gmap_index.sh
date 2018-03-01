@@ -14,8 +14,8 @@ LOG_FOLDER="98_log_files"
 cp $SCRIPT "$LOG_FOLDER"/"$TIMESTAMP"_"$NAME"
 
 # Global variables
-GENOMEFOLDER="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool"
-FASTA="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool/pooled_symiodinium_tr.fa"
+GENOMEFOLDER="pool"
+FASTA="pooled_symiodinium_tr.fa"
 GENOME="gmap_pool"
 
 #move to present working dir
