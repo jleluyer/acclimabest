@@ -9,14 +9,12 @@
 #PBS -r n
 
 
-. /appli/bioinfo/samtools/1.4.1/env.sh
-
 # Global variables
 DATAOUTPUT="04_mapped/assembly"
 DATAINPUT="03_trimmed/assembly"
 
 # For transcriptome
-GENOMEFOLDER="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool"
+GENOMEFOLDER="Symbiodinium_sp/pool"
 GENOME="gmap_pool"
 
 platform="Illumina"
