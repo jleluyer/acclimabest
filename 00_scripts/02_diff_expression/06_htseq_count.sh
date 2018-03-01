@@ -11,14 +11,14 @@
 # Move to present working dir
 cd $PBS_O_WORKDIR
 
-# install htseq
-. /appli/bioinfo/htseq/0.6.1/env.sh
+# import htseq
+
 
 #Global variables
 DATAINPUT="04_mapped/diff_expression"
 DATAOUTPUT="05_count"
 
-GFF_FOLDER_host="/home1/datawork/jleluyer/00_ressources/transcriptomes/P_margaritifera"
+GFF_FOLDER_host="P_margaritifera"
 GFF_FILE_host="Trinity.100aaorf.minexpr0.5.gff3"
 
 #launch script
@@ -28,7 +28,7 @@ base=__BASE__
 htseq-count -f="bam" -s="no" -r="pos" -t="CDS" -i="Name" --mode="union" "$DATAINPUT"/"$base".host.sorted.bam "$GFF_FOLDER_host"/"$GFF_FILE_host" >>"$DATAOUTPUT"/htseq-count_"$base"_host.txt
 
 
-GFF_FOLDER_symbiont="/home1/datawork/jleluyer/00_ressources/transcriptomes/P_margaritifera"
+GFF_FOLDER_symbiont="P_margaritifera"
 GFF_FILE_symbiont="Trinity.100aaorf.minexpr0.5.gff3"
 
 #launch script
