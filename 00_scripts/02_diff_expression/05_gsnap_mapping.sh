@@ -8,19 +8,19 @@
 #PBS -q omp
 #PBS -r n
 
+# import samtools
 
-. /appli/bioinfo/samtools/1.4.1/env.sh
 
 # Global variables
 DATAOUTPUT="04_mapped/diff_expression"
 DATAINPUT="03_trimmed/diff_expression"
 
 # For transcriptome
-GENOMEFOLDER_symbiont="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/clade_C1/gmap_symbiodiniumspC1"
+GENOMEFOLDER_symbiont="gmap_symbiodiniumspC1"
 GENOME_symbiont="gmap_symbiodiniumspC1"
 
 # For genome
-GENOMEFOLDER_host="/home1/datawork/jleluyer/00_ressources/genomes/P_margaritifera"
+GENOMEFOLDER_host="P_margaritifera"
 GENOME_host="indexed_genome"
 platform="Illumina"
 
