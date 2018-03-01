@@ -17,8 +17,8 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
+# import Trinity
 
-. /appli/bioinfo/trinity/latest/env.sh
 
 #Global variables
 #READSLEFT="03_trimmed/assembly/all_reads.left.fastq.gz"
