@@ -40,10 +40,8 @@ base=__BASE__
 
 # Create bam file
     echo "Creating bam for $base"
-    samtools view -Sb -F 4 \
-        "$DATAOUTPUT"/"$base".sam >"$DATAOUTPUT"/"$base".mapped.bam
+    samtools view -Sb -F 4 -F 256 \
+        "$DATAOUTPUT"/"$base".sam >"$DATAOUTPUT"/"$base".bam
 
-	samtools view -Sb -f 4 \
-        "$DATAOUTPUT"/"$base".sam >"$DATAOUTPUT"/"$base".unmapped.bam	
     
 # Clean up
