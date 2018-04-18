@@ -124,8 +124,9 @@ Typical Acclimabest workflow.
 
 *in progress*
 
-![flowchart](https://github.com/jleluyer/acclimabest/tree/master/01_info_files/FLChart_acclimabest.png)
+![flow chart](https://github.com/jleluyer/acclimabest/tree/master/01_info_files/FLChart_acclimabest.png)
 
+flow_chart<img src="https://github.com/jleluyer/acclimabest/tree/master/01_info_files/FLChart_acclimabest.png"/>
 ## Contributors
 
 **Alves Monteiro Kisalu Homère** e-mail: homere.alves-monteiro-kisalu@edu.mnhn.fr
