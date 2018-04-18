@@ -124,7 +124,7 @@ Typical Acclimabest workflow.
 
 *in progress*
 
-![](01_info_files.png)
+![flowchart](https://github.com/jleluyer/acclimabest/tree/master/01_info_files/FLChart_acclimabest.png)
 
 ## Contributors
 
