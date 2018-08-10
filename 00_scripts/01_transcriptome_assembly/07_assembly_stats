@@ -14,11 +14,15 @@ cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
 
 #global variables
-INPUTFILE="05_trinity_assembly/Trinity.fasta"
-OUTPUTFILE="06_assembly_stats/results_stats.txt"
-
-mkdir 06_assembmy_stats
+INPUTFILE="08_trimmed_assembly/symbiont.transcriptome.fa"
+OUTPUTFILE="06_assembly_stats/symbiont.final.txt"
 
 #Check stats
-00_scripts/trinity_utils/util/TrinityStats.pl "$INPUTFILE" > "$OUTPUTFILE" 2>&1 | tee 98_log_files/"$TIMESTAMP"_assemblystats.log
+TrinityStats.pl "$INPUTFILE" > "$OUTPUTFILE" 2>&1 | tee 98_log_files/"$TIMESTAMP"_assemblystats.log
+
+INPUTFILE="08_trimmed_assembly/host.transcriptome.fa"
+OUTPUTFILE="06_assembly_stats/host.final.txt"
+
+#Check stats
+TrinityStats.pl "$INPUTFILE" > "$OUTPUTFILE" 2>&1 | tee 98_log_files/"$TIMESTAMP"_assemblystats.log
 

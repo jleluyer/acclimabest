@@ -5,7 +5,7 @@
 
 rm 00_scripts/datarmor_jobs/HTSQ_*sh
 
-for i in $(ls 04_mapped/diff_expression/*sorted.bam|sed -e 's/.host.sorted.bam//g' -e 's/.symbiont.sorted.bam//g'|sort -u)
+for i in $(ls /scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr/*combined.sorted.bam|sed -e 's/.combined.sorted.bam//g'|sort -u)
 
 do
 base="$(basename $i)"
@@ -15,6 +15,6 @@ done
 
 
 #Submit jobs
-for i in $(ls 00_scripts/datarmor_jobs/HTSQ*sh); do qsub $i; done
+for i in $(ls 00_scripts/datarmor_jobs/HTSQ_*sh); do qsub $i; done
 
 

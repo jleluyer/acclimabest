@@ -2,3 +2,8 @@
 *out
 *err
 05_trinity_assembly*
+wgcna
+go_enrich*
+filter_low_expressio*
+*contamination*
+uniprot*

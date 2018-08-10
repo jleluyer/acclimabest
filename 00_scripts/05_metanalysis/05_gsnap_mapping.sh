@@ -12,20 +12,18 @@
 . /appli/bioinfo/samtools/1.4.1/env.sh
 
 # Global variables
-DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr"
-DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/diff_expr"
+DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysis"
+DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/metanalysis"
 
-#For combined
-GENOMEFOLDER_combined="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
-GENOME_combined="combined.transcriptome"
 
 # For transcriptome
 GENOMEFOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
 GENOME_symbiont="symbiont.transcriptome"
 
-# For genome
 GENOMEFOLDER_host="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
 GENOME_host="host.transcriptome"
+
+
 platform="Illumina"
 
 #move to present working dir
@@ -33,33 +31,6 @@ cd $PBS_O_WORKDIR
 
 base=__BASE__
 
-
-####################################################################
-################## combined ########################################
-####################################################################
-    # Align reads
-    echo "Aligning $base"
-
-    gsnap --gunzip -t 12 -A sam \
-        --dir="$GENOMEFOLDER_combined" -d "$GENOME_combined" \
-        -o "$DATAOUTPUT"/"$base".combined.sam \
-        --max-mismatches=5 --novelsplicing=1 \
-        --read-group-id="$base" \
-         --read-group-platform="$platform" \
-        "$DATAINPUT"/"$base"_R1.paired.fastq.gz "$DATAINPUT"/"$base"_R2.paired.fastq.gz
-
-# Create bam file
-    echo "Creating bam for $base"
-    samtools view -Sb -q 5 -F 4 -F 256 \
-        "$DATAOUTPUT"/"$base".combined.sam >"$DATAOUTPUT"/"$base".combined.bam
-
-     echo "Creating sorted bam for $base"
-        samtools sort -n "$DATAOUTPUT"/"$base".combined.bam -o "$DATAOUTPUT"/"$base".combined.sorted.bam
-        samtools index "$DATAOUTPUT"/"$base".combined.sorted.bam
-
-
-
-exit
 ####################################################################
 ################## symbiont ########################################
 ####################################################################
@@ -72,11 +43,11 @@ exit
 	--max-mismatches=5 --novelsplicing=1 \
 	--read-group-id="$base" \
 	 --read-group-platform="$platform" \
-	"$DATAINPUT"/"$base"_R1.paired.fastq.gz "$DATAINPUT"/"$base"_R2.paired.fastq.gz
+	"$DATAINPUT"/"$base".trimmed.fastq.gz
     
 # Create bam file
     echo "Creating bam for $base"
-    samtools view -Sb -q 5 -F 4 -F 256 \
+    samtools view -Sb -q 5 -F 4 \
         "$DATAOUTPUT"/"$base".symbiont.sam >"$DATAOUTPUT"/"$base".symbiont.bam
 	
      echo "Creating sorted bam for $base"
@@ -98,11 +69,11 @@ exit
         --max-mismatches=5 --novelsplicing=1 \
         --read-group-id="$base" \
          --read-group-platform="$platform" \
-        "$DATAINPUT"/"$base"_R1.paired.fastq.gz "$DATAINPUT"/"$base"_R2.paired.fastq.gz
+        "$DATAINPUT"/"$base".trimmed.fastq.gz
 
 # Create bam file
     echo "Creating bam for $base"
-    samtools view -Sb -q 5 -F 4 -F 256 \
+    samtools view -Sb -q 5 -F 4 \
         "$DATAOUTPUT"/"$base".host.sam >"$DATAOUTPUT"/"$base".host.bam
 
      echo "Creating sorted bam for $base"

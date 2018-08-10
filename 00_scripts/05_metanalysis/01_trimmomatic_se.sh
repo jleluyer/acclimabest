@@ -1,7 +1,7 @@
 #!/bin/bash
 #PBS -N trimmomatic__BASE__
-#PBS -o 98_log_files/trimmomatic__BASE__.out
-#PBS -l walltime=02:00:00
+#PBS -o trimmomatic__BASE__.out
+#PBS -l walltime=20:00:00
 #PBS -l mem=60g
 #####PBS -m ea 
 #PBS -l ncpus=8
@@ -21,22 +21,17 @@ cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
 # Global variables
 
+DATAOUT="/scratch/home1/jleluyer/acclimabest/"
 ADAPTERFILE="/home1/datawork/jleluyer/00_ressources/univec/univec.fasta"
-OUTPUT="/scratch/home1/jleluyer/acclimabest"
 NCPU=8
 base=__BASE__
 
-trimmomatic PE -Xmx60G \
-        -threads 8 \
+trimmomatic SE -Xmx60G \
         -phred33 \
-        02_data/assembly/"$base"_R1.fastq.gz \
-        02_data/assembly/"$base"_R2.fastq.gz \
-        "$OUTPUT"/03_trimmed/assembly/"$base"_R1.paired.fastq.gz \
-        "$OUTPUT"/03_trimmed/assembly/"$base"_R1.single.fastq.gz \
-        "$OUTPUT"/03_trimmed/assembly/"$base"_R2.paired.fastq.gz \
-        "$OUTPUT"/03_trimmed/assembly/"$base"_R2.single.fastq.gz \
+        "$DATAOUT"/02_data/metanalysis/"$base"_1.fastq.gz \
+        "$DATAOUT"/03_trimmed/metanalysis/"$base".trimmed.fastq.gz \
         ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
         LEADING:20 \
         TRAILING:20 \
         SLIDINGWINDOW:30:30 \
-        MINLEN:60 
+        MINLEN:40 2>&1 | tee 98_log_files/"$TIMESTAMP"_trimmomatic_"$base".log

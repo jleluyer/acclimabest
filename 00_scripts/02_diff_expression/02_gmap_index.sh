@@ -13,14 +13,27 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT "$LOG_FOLDER"/"$TIMESTAMP"_"$NAME"
 
-# Global variables
-GENOMEFOLDER="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool"
-FASTA="/home1/datawork/jleluyer/00_ressources/transcriptomes/Symbiodinium_sp/pool/pooled_symiodinium_tr.fa"
-GENOME="gmap_pool"
-
 #move to present working dir
 cd $PBS_O_WORKDIR
 
-#
+# Combined
+## Host
+GENOMEFOLDER="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
+FASTA="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/combined.transcriptome.fa"
+GENOME="combined.transcriptome"
 
 gmap_build --dir="$GENOMEFOLDER" "$FASTA" -d "$GENOME" 2> 98_log_files/log.index."$TIMESTAMP"
+exit
+## Host
+GENOMEFOLDER="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
+FASTA="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/host.transcriptome.fa"
+GENOME="host.transcriptome"
+
+gmap_build --dir="$GENOMEFOLDER" "$FASTA" -d "$GENOME" 2> 98_log_files/log.index."$TIMESTAMP"
+
+# Symbiont
+FASTA="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/symbiont.transcriptome.fa"
+GENOME="symbiont.transcriptome"
+
+gmap_build --dir="$GENOMEFOLDER" "$FASTA" -d "$GENOME" 2> 98_log_files/log.index."$TIMESTAMP"
+

@@ -11,6 +11,6 @@ cd $PBS_O_WORKDIR
 
 
 #Global variables
-INPUT="05_trinity_assembly/raw.trinity.fasta"
+INPUT="08_trimmed_assembly/filter_low_expression_transcripts.fa"
 
 TransDecoder.LongOrfs -t $INPUT 2>&1 | tee 98_log_files/transdecoder_getorf.log 
