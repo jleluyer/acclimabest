@@ -8,7 +8,7 @@
 
 cd $PBS_O_WORKDIR
 
-. /appli/bioinfo/qiime/latest/env.sh
+# module load
 
 # Prior check sampling depth in https://view.qiime2.org/
 
