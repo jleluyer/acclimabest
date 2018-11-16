@@ -4,7 +4,7 @@
 rm 00_scripts/datarmor_jobs/01_transcriptome_assembly/TRIM*sh
 
 # launch scripts for Colosse
-for file in $(ls /home1/scratch/jleluyer/acclimabest/02_data/metabarcoding/*fastq.gz|sed -e 's/_R[12].fastq.gz//'|sort -u)
+for file in $(ls 02_data/*fastq.gz|sed -e 's/_R[12].fastq.gz//'|sort -u)
 
 do
 	base=$(basename "$file")
