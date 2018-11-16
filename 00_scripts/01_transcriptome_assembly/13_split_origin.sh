@@ -13,7 +13,7 @@
 cd $PBS_O_WORKDIR
 
 # Global variables
-DB="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/01_info_files/pool.genome.transcriptome.fa"
+DB="01_info_files/pool.genome.transcriptome.fa"
 TRANSCRIPTOME="08_trimmed_assembly/filtexp0.5_orf.fa"
 
 
