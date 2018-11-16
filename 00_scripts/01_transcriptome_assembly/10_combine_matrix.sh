@@ -11,7 +11,7 @@ cd $PBS_O_WORKDIR
 
 
 #Global variables
-DATAIN="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/07_de_results"		#path to abundance estimate files directory (isoforms.results files)
+DATAIN="07_de_results"		#path to abundance estimate files directory (isoforms.results files)
 
 sample1="$DATAIN"/isoform.HI.4692.002.NEBNext_Index_11.38
 sample2="$DATAIN"/isoform.HI.4692.002.NEBNext_Index_13.37
