@@ -5,7 +5,7 @@
 
 rm 00_scripts/datarmor_jobs/05_metanalysis/HTSQ_*sh
 
-for i in $(ls /scratch/home1/jleluyer/acclimabest/04_mapped/metanalysisi_c1/*symbiont.sorted.bam|sed -e 's/.symbiont.sorted.bam//g'|sort -u)
+for i in $(ls 04_mapped/metanalysisi_c1/*symbiont.sorted.bam|sed -e 's/.symbiont.sorted.bam//g'|sort -u)
 
 do
 base="$(basename $i)"
