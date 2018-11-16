@@ -11,16 +11,16 @@
 
 . /appli/bioinfo/samtools/1.4.1/env.sh
 
-# Global variables
-DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysisi_c1"
-DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/metanalysis"
+# Global variables for genome
+DATAOUTPUT="/scratch/04_mapped/metanalysis"
+DATAINPUT="/scratch/03_trimmed/metanalysis"
 
 
 # For transcriptome
-GENOMEFOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
+GENOMEFOLDER_symbiont="08_trimmed_assembly/"
 GENOME_symbiont="symbiont.transcriptome"
 
-GENOMEFOLDER_c1="/home1/datawork/jleluyer/00_ressources/genomes/S_cladeC/"
+GENOMEFOLDER_c1="00_ressources/genomes/S_cladeC/"
 GENOME_c1_index="genome_symbC"
 
 platform="Illumina"
