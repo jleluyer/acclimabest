@@ -8,7 +8,7 @@
 
 cd $PBS_O_WORKDIR
 
-. /appli/bioinfo/qiime/latest/env.sh
+# module load
 
 
 # export biom file
