@@ -13,8 +13,8 @@
 cd $PBS_O_WORKDIR
 
 # Global variables
-DB="/home1/datawork/jleluyer/00_ressources/genomes/S_cladeC/SymbC1.Genome.Scaffolds.fasta"
-TRANSCRIPTOME="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/final.assembly.fa"
+DB="00_ressources/genomes/S_cladeC/SymbC1.Genome.Scaffolds.fasta"
+TRANSCRIPTOME="08_trimmed_assembly/final.assembly.fa"
 
 makeblastdb -in $DB -input_type 'fasta' -dbtype 'nucl'
 
