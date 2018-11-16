@@ -7,13 +7,13 @@
 #PBS -q omp
 #PBS -r n
 
-. /appli/bioinfo/blast/2.6.0/env.sh
+# module load
 
 
 cd $PBS_O_WORKDIR
 
 # Global variables
-UNIPROT="/home1/datawork/jleluyer/00_ressources/uniprot/uniprot_sprot.fasta"
+UNIPROT="00_ressources/uniprot/uniprot_sprot.fasta"
 
 
 #makeblastdb -in $UNIPROT -input_type 'fasta' -dbtype 'prot'
