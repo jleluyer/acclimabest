@@ -21,8 +21,8 @@ sample=__BASE__
 
 #Global variables
 TRANSCRIPTOME="05_trinity_assembly/raw.trinity.fasta"
-READSLEFT="/scratch/home1/jleluyer/acclimabest/03_trimmed/assembly/"$sample"_R1.paired.fastq.gz"
-READSRIGHT="/scratch/home1/jleluyer/acclimabest/03_trimmed/assembly/"$sample"_R2.paired.fastq.gz"
+READSLEFT="03_trimmed/assembly/"$sample"_R1.paired.fastq.gz"
+READSRIGHT="03_trimmed/assembly/"$sample"_R2.paired.fastq.gz"
 
 #########################################################################
 #Required
