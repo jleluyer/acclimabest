@@ -10,56 +10,28 @@
 
 cd $PBS_O_WORKDIR
 
-
 TIMESTAMP=$(date +%Y-%m-%d_%Hh%Mm%Ss)
 SCRIPT=$0
 NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
-. /appli/bioinfo/trimmomatic/0.36/env.sh
-
-
-
 ## for corals
-ADAPTERFILE="/home1/datawork/jleluyer/00_ressources/univec/univec.fasta"
+ADAPTERFILE="univec.fasta"
 NCPU=8
 base=__BASE__
 
 trimmomatic PE -Xmx60G \
         -threads 8 \
         -phred33 \
-        /home1/scratch/jleluyer/acclimabest/02_data/metabarcoding/"$base"_R1.fastq.gz \
-        /home1/scratch/jleluyer/acclimabest/02_data/metabarcoding/"$base"_R2.fastq.gz \
-        /home1/scratch/jleluyer/acclimabest/03_trimmed/metabarcoding/"$base"_R1.paired.fastq.gz \
-        /home1/scratch/jleluyer/acclimabest/03_trimmed/metabarcoding/"$base"_R1.single.fastq.gz \
-       	/home1/scratch/jleluyer/acclimabest/03_trimmed/metabarcoding/"$base"_R2.paired.fastq.gz \
-        /home1/scratch/jleluyer/acclimabest/03_trimmed/metabarcoding/"$base"_R2.single.fastq.gz \
+        02_data/metabarcoding/"$base"_R1.fastq.gz \
+       02_data/"$base"_R2.fastq.gz \
+        03_trimmed/"$base"_R1.paired.fastq.gz \
+        03_trimmed/"$base"_R1.single.fastq.gz \
+       	03_trimmed/"$base"_R2.paired.fastq.gz \
+        03_trimmed/"$base"_R2.single.fastq.gz \
         ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
         LEADING:20 \
         TRAILING:20 \
         SLIDINGWINDOW:30:30 \
         MINLEN:60 2> 98_log_files/log.trimmomatic.pe."$TIMESTAMP"
-
-# for free-living
-# Global variables
-
-DATAOUT="/scratch/home1/jleluyer/acclimabest/"
-ADAPTERFILE="/home1/datawork/jleluyer/00_ressources/univec/univec.fasta"
-NCPU=8
-base=__BASE__
-
-trimmomatic PE -Xmx60G \
-        -threads 8 \
-        -phred33 \
-        02_data/diff_expression/"$base"_R1.fastq.gz \
-        02_data/diff_expression/"$base"_R2.fastq.gz \
-        "$DATAOUT"/"$base"_R1.paired.fastq.gz \
-        "$DATAOUT"/"$base"_R1.single.fastq.gz \
-       "$DATAOUT"/"$base"_R2.paired.fastq.gz \
-        "$DATAOUT"/"$base"_R2.single.fastq.gz \
-        ILLUMINACLIP:"$ADAPTERFILE":2:20:7 \
-        LEADING:20 \
-        TRAILING:20 \
-        SLIDINGWINDOW:30:30 \
-        MINLEN:60 2> 98_log_files/log.trimmomatic.pe."$TIMESTAMP"   
