@@ -4,7 +4,7 @@
 rm 00_scripts/datarmor_jobs/05_metanalysis/TRIM_*sh
 
 # launch scripts for Colosse
-for file in $(ls /home1/scratch/jleluyer/acclimabest/02_data/metanalysis/*gz|sed 's/_1.fastq.gz//g')
+for file in $(ls 02_data/metanalysis/*gz|sed 's/_1.fastq.gz//g')
 
 do
 	base=$(basename "$file")
