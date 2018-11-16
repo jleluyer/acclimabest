@@ -120,11 +120,7 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 
 ## Flow chart
 
-Typical Acclimabest workflow. 
-
-*in progress*
-
-![](01_info_files.png)
+![](FLChart_acclimabest.png)
 
 ## Contributors
 

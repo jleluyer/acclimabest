@@ -17,10 +17,11 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
+# import Trinity
 
 #Global variables
-READSLEFT="/scratch/home1/jleluyer/acclimabest/03_trimmed/assembly/combined_R1.fastq.gz"
-READSRIGHT="/scratch/home1/jleluyer/acclimabest/03_trimmed/assembly/combined_R2.fastq.gz"
+READSLEFT="03_trimmed/assembly/combined_R1.fastq.gz"
+READSRIGHT="03_trimmed/assembly/combined_R2.fastq.gz"
 #READSSINGLE="03_trimmed/assembly/host.fastq.gz"
 
 #Trinity variables

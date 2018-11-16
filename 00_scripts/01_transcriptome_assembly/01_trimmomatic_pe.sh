@@ -17,12 +17,12 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
-. /appli/bioinfo/trimmomatic/0.36/env.sh
+# import trimmomatic
 
 # Global variables
 
-ADAPTERFILE="/home1/datawork/jleluyer/00_ressources/univec/univec.fasta"
-OUTPUT="/scratch/home1/jleluyer/acclimabest"
+OUTPUT="scratch"
+ADAPTERFILE="univec.fasta"
 NCPU=8
 base=__BASE__
 

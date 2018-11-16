@@ -7,19 +7,20 @@
 #PBS -l mem=30g
 #PBS -r n
 
-. /appli/bioinfo/samtools/latest/env.sh
+# import samtools
+
 
 # Move to present working dir
 cd $PBS_O_WORKDIR
 
 
-GTF="/home1/datawork/jleluyer/00_ressources/genomes/P_margaritifera/indexed_genome.gtf"
-GENOME="/home1/datawork/jleluyer/00_ressources/genomes/P_margaritifera/Pmarg_trimmed.fasta"
+GTF="indexed_genome.gtf"
+GENOME="Pmarg_trimmed.fasta"
 base=__BASE__
 
 
 # launch 
-java -jar -Xmx25g /home1/datahome/jleluyer/softwares/QoRTs-STABLE.jar QC \
+java -jar -Xmx25g QoRTs-STABLE.jar QC \
 		--stranded \
 		--nameSorted \
 		--minMAPQ 30 \

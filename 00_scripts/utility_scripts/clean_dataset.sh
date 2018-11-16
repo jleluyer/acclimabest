@@ -14,7 +14,8 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
-. /appli/bioinfo/samtools/latest/env.sh
+# Import samtools
+
 
 # Tools dependencies BBmap
 

@@ -8,8 +8,8 @@
 #PBS -q omp
 #PBS -r n
 
+# import samtools
 
-. /appli/bioinfo/samtools/1.4.1/env.sh
 
 # Global variables
 #DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr"
@@ -23,12 +23,21 @@ GENOMEFOLDER_combined="/home1/datawork/jleluyer/01_projects/acclimabest/acclimab
 GENOME_combined="combined.transcriptome"
 
 # For transcriptome
+<<<<<<< HEAD
 GENOMEFOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
 GENOME_symbiont="symbiont.transcriptome"
 
 # For genome
 GENOMEFOLDER_host="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
 GENOME_host="host.transcriptome"
+=======
+GENOMEFOLDER_symbiont="gmap_symbiodiniumspC1"
+GENOME_symbiont="gmap_symbiodiniumspC1"
+
+# For genome
+GENOMEFOLDER_host="P_margaritifera"
+GENOME_host="indexed_genome"
+>>>>>>> 2cb3adf5747abb1060eb5ca4c7d30ac5063238df
 platform="Illumina"
 
 #move to present working dir
