@@ -12,7 +12,7 @@
 . /appli/bioinfo/samtools/1.4.1/env.sh
 
 # Global variables
-DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysis"
+DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysisi_c1"
 DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/metanalysis"
 
 
@@ -20,9 +20,8 @@ DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/metanalysis"
 GENOMEFOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
 GENOME_symbiont="symbiont.transcriptome"
 
-GENOMEFOLDER_host="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
-GENOME_host="host.transcriptome"
-
+GENOMEFOLDER_c1="/home1/datawork/jleluyer/00_ressources/genomes/S_cladeC/"
+GENOME_c1_index="genome_symbC"
 
 platform="Illumina"
 
@@ -38,7 +37,7 @@ base=__BASE__
     echo "Aligning $base"
 
     gsnap --gunzip -t 12 -A sam \
-	--dir="$GENOMEFOLDER_symbiont" -d "$GENOME_symbiont" \
+	--dir="$GENOMEFOLDER_c1" -d "$GENOME_c1_index" \
         -o "$DATAOUTPUT"/"$base".symbiont.sam \
 	--max-mismatches=5 --novelsplicing=1 \
 	--read-group-id="$base" \
@@ -54,28 +53,3 @@ base=__BASE__
 	samtools sort -n "$DATAOUTPUT"/"$base".symbiont.bam -o "$DATAOUTPUT"/"$base".symbiont.sorted.bam
     	samtools index "$DATAOUTPUT"/"$base".symbiont.sorted.bam
 
-
-####################################################################
-################## host ###########################################
-####################################################################
-
-
-    # Align reads
-    echo "Aligning $base"
-
-    gsnap --gunzip -t 12 -A sam \
-        --dir="$GENOMEFOLDER_host" -d "$GENOME_host" \
-        -o "$DATAOUTPUT"/"$base".host.sam \
-        --max-mismatches=5 --novelsplicing=1 \
-        --read-group-id="$base" \
-         --read-group-platform="$platform" \
-        "$DATAINPUT"/"$base".trimmed.fastq.gz
-
-# Create bam file
-    echo "Creating bam for $base"
-    samtools view -Sb -q 5 -F 4 \
-        "$DATAOUTPUT"/"$base".host.sam >"$DATAOUTPUT"/"$base".host.bam
-
-     echo "Creating sorted bam for $base"
-        samtools sort -n "$DATAOUTPUT"/"$base".host.bam -o "$DATAOUTPUT"/"$base".host.sorted.bam
-        samtools index "$DATAOUTPUT"/"$base".host.sorted.bam

@@ -13,16 +13,16 @@ cd $PBS_O_WORKDIR
 
 
 #Global variables
-DATAINPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysis"
-DATAOUTPUT="05_count/metanalysis"
+DATAINPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/metanalysisi_c1"
+DATAOUTPUT="05_count/metanalysis_c1"
 
-GFF_FOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly"
-GFF_FILE_symbiont="symbiont.gff"
+GFF_FOLDER_symbiont="/home1/datawork/jleluyer/00_ressources/genomes/S_cladeC"
+GFF_FILE_symbiont="SymbC1.Gene_Models.GFF3"
 
 #launch script
 base=__BASE__
 
 # for gene expression
-htseq-count -f "bam" -s "no" -t "CDS" -i "Name" "$DATAINPUT"/"$base".symbiont.sorted.bam "$GFF_FOLDER_symbiont"/"$GFF_FILE_symbiont" >>"$DATAOUTPUT"/htseq-count_"$base".txt
+htseq-count -f "bam" -s "no" -t "gene" -i "ID" "$DATAINPUT"/"$base".symbiont.sorted.bam "$GFF_FOLDER_symbiont"/"$GFF_FILE_symbiont" >>"$DATAOUTPUT"/htseq-count_"$base".txt
 
 

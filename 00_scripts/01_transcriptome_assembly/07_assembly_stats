@@ -12,6 +12,13 @@ NAME=$(basename $0)
 LOG_FOLDER="98_log_files"
 cp $SCRIPT $LOG_FOLDER/"$TIMESTAMP"_"$NAME"
 
+INPUTFILE="/home/datawork-rmpf/p_margaritifera/genome/annotation/01_reference/sspace.final.scaffolds.fasta"
+
+OUTPUTFILE="06_assembly_stats/genome.txt"
+
+#Check stats
+TrinityStats.pl "$INPUTFILE" > "$OUTPUTFILE" 2>&1 | tee 98_log_files/"$TIMESTAMP"_assemblystats.log
+exit
 
 #global variables
 INPUTFILE="08_trimmed_assembly/symbiont.transcriptome.fa"

@@ -13,8 +13,8 @@ cd $PBS_O_WORKDIR
 
 
 #Global variables
-DATAINPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr/"
-DATAOUTPUT="05_count/symbiont"
+DATAINPUT="04_mapped/corals/"
+DATAOUTPUT="05_count/corals/"
 
 GFF_FOLDER_symbiont="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly"
 GFF_FILE_symbiont="symbiont.gff"
@@ -25,7 +25,7 @@ base=__BASE__
 # for gene expression
 htseq-count -f "bam" -s "no" -t "CDS" -i "Name" "$DATAINPUT"/"$base".combined.sorted.bam "$GFF_FOLDER_symbiont"/"$GFF_FILE_symbiont" >>"$DATAOUTPUT"/htseq-count_"$base".txt
 
-
+exit
 
 
 # FOR HOST

@@ -12,8 +12,11 @@
 . /appli/bioinfo/samtools/1.4.1/env.sh
 
 # Global variables
-DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr"
-DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/diff_expr"
+#DATAOUTPUT="/scratch/home1/jleluyer/acclimabest/04_mapped/diff_expr"
+#DATAINPUT="/scratch/home1/jleluyer/acclimabest/03_trimmed/diff_expr"
+
+DATAOUTPUT="04_mapped/corals"
+DATAINPUT="03_trimmed/corals"
 
 #For combined
 GENOMEFOLDER_combined="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/"
@@ -38,7 +41,7 @@ base=__BASE__
 ################## combined ########################################
 ####################################################################
     # Align reads
-    echo "Aligning $base"
+#    echo "Aligning $base"
 
     gsnap --gunzip -t 12 -A sam \
         --dir="$GENOMEFOLDER_combined" -d "$GENOME_combined" \
