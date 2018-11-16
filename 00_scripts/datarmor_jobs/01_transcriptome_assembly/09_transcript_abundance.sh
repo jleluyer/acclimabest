@@ -7,7 +7,7 @@ rm 00_scripts/datarmor_jobs/01_transcriptome_assembly/ABD_*sh
 
 
 # launch scripts for Colosse
-for file in $(ls /scratch/home1/jleluyer/acclimabest/03_trimmed/assembly/*paired.fastq.gz|sed -e 's/.paired.fastq.gz//' -e 's/_R[12]//g'|sort -u)
+for file in $(ls 03_trimmed/assembly/*paired.fastq.gz|sed -e 's/.paired.fastq.gz//' -e 's/_R[12]//g'|sort -u)
 do
 
 base=$(basename "$file")
