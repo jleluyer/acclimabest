@@ -18,12 +18,12 @@ MATRIX="07_de_results/RSEM.isoform.TPM.not_cross_norm"			#path to abundance matr
 
 #OUTPUT="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/filter_low_expression_transcripts.fa"
 
-OUTPUT="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/08_trimmed_assembly/filter_low_expression_stats_and_orfs.fa"
+OUTPUT="08_trimmed_assembly/filter_low_expression_stats_and_orfs.fa"
 
 
 #Global variables
 MIN_EXPR=0.5
-DATAIN="/home1/datawork/jleluyer/01_projects/acclimabest/acclimabest/07_de_results"
+DATAIN="07_de_results"
 
 filter_low_expr_transcripts.pl --transcripts $ASSEMBLY --matrix $MATRIX --highest_iso_only --min_expr_any $MIN_EXPR --trinity_mode > $OUTPUT
 
