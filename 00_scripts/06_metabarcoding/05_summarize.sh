@@ -7,8 +7,7 @@
 #PBS -r n
 
 cd $PBS_O_WORKDIR
-
-. /appli/bioinfo/qiime/latest/env.sh
+# module load
 
 qiime feature-table summarize \
   --i-table table.qza \
