@@ -128,7 +128,5 @@ This step is meant to tease apart host from symbionts transcripts (*i.e* Corals,
 
 **Brahmi Chloé** e-mail: chloe.brahmi@upf.pf
 
-**Lapeyre Bruno** e-mail: bruno.lapeyre@criobe.pf
-
 **Le Luyer Jérémy** e-mail: jeremy.le.luyer@ifremer.fr
 
